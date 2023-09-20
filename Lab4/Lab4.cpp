@@ -105,15 +105,24 @@ void geometric()
     }
 
     current = a;
-    cout << to_string(a);
 
-    for (int i = 0; i < elements - 1; i++)
+    for (int i = 0; i < elements; i++)
     {
-        current = r^i * a;
-        cout << to_string(a) + "* " + to_string(r) + "^" + to_string(i);
+        current = a * pow(r,i);
+        cout << to_string(current);
+        
+        if(i == elements - 1)
+        {
+            cout << " = ";
+        }
+        else
+        {
+            cout << " + ";
+        }
+
         result += current;
     }
-    cout << " = " + to_string(current) << endl;
+    cout << to_string(result) << endl;
 }
 
 int main()
