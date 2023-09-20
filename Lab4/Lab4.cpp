@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 void printMenu()
@@ -18,21 +19,101 @@ void factorial()
 {
     int factor;
     int result;
-    
+    result = 1;
+
     cout << "What factor would you like? ";
     cin >> factor;
+    cout << " " << endl;
 
-
+    while(factor < 1)
+    {
+        cout << "Nice try, please enter a positive number." << endl;
+        cin >> factor;
+    }
+    
+    cout << to_string(factor) + "! = 1";
+    for (int i = 2; i <= factor; i++) {
+         result = i * result;
+         cout << " * " + to_string(i);
+    }
+    cout << " = " + to_string(result) << endl;
+    
 }
 
 void arithmetic()
 {
+    int startNum;
+    int difference;
+    int elements;
+    int current;
 
+    cout << "Please enter the starting number: ";
+    cin >> startNum;
+    cout << " " << endl;
+
+    cout << "Please enter the desired difference: ";
+    cin >> difference;
+    cout << " " << endl;
+
+    cout << "Please enter the number of elements: ";
+    cin >> elements;
+    cout << " " << endl;
+
+    while(elements < 1) {
+        cout << "Nice try, please enter a positive integer: ";
+        cin >> elements;
+        cout << " " << endl;
+    }
+
+    current = startNum;
+    cout << to_string(startNum);
+
+    for(int i = 0; i < elements - 1; i++)
+    {
+        current += difference;
+        cout << " + " + to_string(current);
+        startNum += current;
+
+    }
+    cout << " = " + to_string(startNum) << endl;
 }
 
 void geometric()
 {
+    int a;
+    int r;
+    int elements;
+    int current;
+    int result = 0;
 
+    cout << "Please enter the value for a: ";
+    cin >> a;
+    cout << " " << endl;
+
+    cout << "Please enter the value for r: ";
+    cin >> r;
+    cout << " " << endl;
+
+    cout << "Please enter the number of elements: ";
+    cin >> elements;
+    cout << " " << endl;
+
+    while (elements < 1) {
+        cout << "Nice try, please enter a positive integer: ";
+        cin >> elements;
+        cout << " " << endl;
+    }
+
+    current = a;
+    cout << to_string(a);
+
+    for (int i = 0; i < elements - 1; i++)
+    {
+        current = r^i * a;
+        cout << to_string(a) + "* " + to_string(r) + "^" + to_string(i);
+        result += current;
+    }
+    cout << " = " + to_string(current) << endl;
 }
 
 int main()
@@ -62,7 +143,7 @@ int main()
             geometric();
         }
 
-        cout << "Go again? [Y/N]";
+        cout << "Go again? [Y/N] ";
         cin >> again;
     } while (again == 'Y' || again == 'y');
 }
