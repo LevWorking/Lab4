@@ -21,6 +21,7 @@ void factorial()
     int result;
     result = 1;
 
+    cout << "Factorial" << endl;
     cout << "What factor would you like? ";
     cin >> factor;
     cout << " " << endl;
@@ -46,7 +47,8 @@ void arithmetic()
     int difference;
     int elements;
     int current;
-
+    
+    cout << "Arithmetic Series" << endl;
     cout << "Please enter the starting number: ";
     cin >> startNum;
     cout << " " << endl;
@@ -86,6 +88,7 @@ void geometric()
     int current;
     int result = 0;
 
+    cout << "Geometric Series" << endl;
     cout << "Please enter the value for a: ";
     cin >> a;
     cout << " " << endl;
